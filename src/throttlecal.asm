@@ -23,7 +23,7 @@ EscThrottleCalibration:
 	lrv OutputRateDividerCounter, 1
 	lrv OutputRateDivider, 8	;slow rate divider. f = 400 / OutputRateDivider
 	rvsetflagtrue flagArmed
-	lrv RxTimeoutLimit, 250
+	b16ldi ServoFilter, 1
 
 	LedOn
 

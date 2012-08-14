@@ -90,10 +90,7 @@ reset:	ldi t,low(ramend)	;initalize stack pointer
 	sts CppmPulseArrayAddressL, zl
 	sts CppmPulseArrayAddressH, zh
 
-	ldz eeCppmOn
-	call ReadEeprom
-	sts flagCppmOn, t
-
+	call FlightInit
 
 
 ;--- MAIN ----
@@ -114,7 +111,6 @@ ma5:
 
 ma2:	call FlightInit
 
-	
 	;       76543210		;clear pending OCR1A and B interrupt
 	ldi t,0b00000110
 	store tifr1, t
